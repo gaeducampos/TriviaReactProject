@@ -1,0 +1,93 @@
+body {
+  background-color: #F5F7FB;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.intro--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  height: 550px;
+  color: #293264;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.intro-title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 37px;
+}
+
+.intro--description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+
+.intro-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 250px;
+  height: 70px;
+  background-color: #4D5B9E;
+  border-radius: 15px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  text-decoration: none;
+}
+
+.quizz--QAContainer {
+  width: 600px;
+  height: 50px;
+}
+
+.quizz--questions {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  color: #293264;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 50px;
+}
+
+.quizz--answers {
+  white-space: nowrap;
+  display: flex;
+  word-wrap: break-word;
+  gap: 50px;
+
+}
+
+.correct {
+  background-color: green;
+}
+
+.quizz-answer {
+  text-decoration: none;
+  padding: 8px 30px;
+  border-radius: 7px;
+  background-color: #F5F7FB;
+  border: 1px solid #293264;
+  color: #293264;
+}
+
+
+
+.quizz-btn--container {
+  margin-top: 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
