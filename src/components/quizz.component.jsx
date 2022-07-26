@@ -7,6 +7,7 @@ import QuestionAndAnswer from './q&a.components'
 const Quizz = ({ quizzInfo, handleChange }) => {
   const [quizz, setQuizz] = useState(quizzInfo)
   const [checkAnswer, setCheckAnswer] = useState(false);
+  const [countCorrect, setCountCorrect] = useState(0);
 
 
   const handleSelectAnswer = (e, id, answers, question) => {
@@ -18,6 +19,12 @@ const Quizz = ({ quizzInfo, handleChange }) => {
         return answer.id === id
           ? { ...answer, isSelected: !answer.isSelected }
           : { ...answer, isSelected: false }
+      })
+
+      newObjectAnswer.forEach((answer) => {
+        if (answer.isSelected && answer.isCorrect) {
+          setCountCorrect(prevCount => prevCount + 1)
+        }
       })
 
 
@@ -36,6 +43,7 @@ const Quizz = ({ quizzInfo, handleChange }) => {
   const displayQuiz = quizz.map((item) => {
     return (
       <QuestionAndAnswer
+        key={nanoid()}
         handleSelectAnswer={handleSelectAnswer}
         question={item.question}
         answers={item.answers}
@@ -48,8 +56,9 @@ const Quizz = ({ quizzInfo, handleChange }) => {
     <div className='quiiz-container'>
       {displayQuiz}
       <div className='quizz-btn--container'>
+        {checkAnswer && <h3 className='scored--Answers'>You Scored {countCorrect}/5 correct Answers</h3>}
         {!checkAnswer && <Link onClick={toggleCheckAnswers} to='/Quiz' className='intro-btn quizz--btn'>Check Answers</Link>}
-        {checkAnswer && <Link onClick={handleChange} href="/" to="/" className='intro-btn quizz--btn'>New Quiz</Link>}
+        {checkAnswer && <Link onClick={handleChange} href="/" to="/" className='intro-btn quizz--btn'>Play Again</Link>}
       </div>
     </div>
   )

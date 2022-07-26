@@ -91,3 +91,13 @@ body {
   display: flex;
   justify-content: end;
 }
+
+.scored--Answers {
+  margin-right: 30px;
+  font-size: 25px;
+  align-self: center;
+  padding-top: 10px;
+  color: #293264;
+  font-weight: 700;
+  text-align: center;
+}

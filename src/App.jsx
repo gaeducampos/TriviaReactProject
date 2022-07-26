@@ -10,7 +10,6 @@ const App = () => {
   const api = "https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple"
 
   const [quizzData, setQuizzData] = useState([]);
-
   const [isPathChanged, setIsPathChanged] = useState(false)
 
   const location = useLocation();
@@ -37,7 +36,11 @@ const App = () => {
 
     answers.push({ id: nanoid(), value: item.correct_answer, isSelected: false, isCorrect: true })
 
-    return { question: item.question, answers: answers }
+    const shuffleAnswers = answers.sort(() => {
+      return Math.random() - 0.5;
+    })
+
+    return { question: item.question, answers: shuffleAnswers }
 
   })
 
